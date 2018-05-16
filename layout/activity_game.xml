@@ -1,0 +1,120 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/mainLayout"
+    tools:context="com.cwprogramming.pacman.activities.MainMenuActivity">
+
+
+    <com.cwprogramming.pacman.game.Game
+        android:id="@+id/game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".4"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/pauseTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap here to go/pause. To move use the control pad."/>
+
+            <TextView
+                android:id="@+id/levelTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/cakesTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""/>
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".6"
+            android:layout_margin="0dp">
+
+            <Button
+                android:id="@+id/upBtn"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+
+                android:layout_margin="10dp"
+                android:background="@drawable/oval_btn"
+                android:text="up"
+                app:layout_constraintBottom_toTopOf="@+id/downBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/rightBtn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_margin="5dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/oval_btn"
+                android:text="right"
+                app:layout_constraintBottom_toTopOf="@+id/downBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/upBtn" />
+
+            <Button
+                android:id="@+id/downBtn"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/oval_btn"
+                android:text="down"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/upBtn" />
+
+            <Button
+                android:id="@+id/leftBtn"
+                android:layout_width="50dp"
+                android:layout_height="80dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/oval_btn"
+                android:text="left"
+                app:layout_constraintBottom_toTopOf="@+id/downBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/upBtn" />
+
+            <com.cwprogramming.pacman.views.JoystickView
+                android:id="@+id/joystickView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
